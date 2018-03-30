@@ -1,5 +1,6 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 // const extractSass = new ExtractTextPlugin(
 // {
 //     filename: "index.css",
@@ -77,6 +78,16 @@ module.exports = {
                 {
                     use: 'css-loader'
                 })
+            },
+
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract(
+                {
+                    fallback: 'style-loader',
+                    //如果需要，可以在 sass-loader 之前将 resolve-url-loader 链接进来
+                    use: ['css-loader', 'sass-loader']
+                })
             }
 
             // {
@@ -99,6 +110,10 @@ module.exports = {
         new ExtractTextPlugin(
         {
             filename: 'common.css'
+        }),
+        new HtmlWebpackPlugin(
+        {
+            template: __dirname + "/app/index.tmpl.html" //new 一个这个插件的实例，并传入相关的参数
         })
     ]
 
