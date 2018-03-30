@@ -1,1 +1,27 @@
-<!DOCTYPE html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta http-equiv=Content-Type content="text/html; charset=gb2312"/> <title>Webpack Sample Project</title> <meta name=description content=""> <meta name=keywords content=""><link href="common.css" rel="stylesheet"></head> <body> <div id=root></div> <div></div> <div>使用 background-image 添加图片</div> <div style=background-image:url(images/1.jpg);width:690px;height:863px></div> <div>使用 css 添加图片</div> <div class=imgs></div> <div></div> <div>直接src</div> <div><img src=images/1.906f5c67.jpg alt=""></div> <div class=bg></div> <div id=test>jq测试点击</div> <script type="text/javascript" src="entry.js"></script><script type="text/javascript" src="entry2.js"></script></body> </html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>Webpack Sample Project</title>
+    <meta name="description" content="">
+    <meta name="keywords" content=""><link href="common.css" rel="stylesheet"></head>
+<body>
+    <div id='root'></div>
+    <div></div>
+
+
+        <div>使用 background-image 添加图片</div>
+        <div style="background-image: url(./images/1.jpg);width: 690px;height: 863px"></div>
+
+        <div>使用 css 添加图片</div>
+        <div class="imgs"></div>
+
+        <div></div>
+
+        <div>直接src</div>
+        <div><img src="./images/1.jpg" alt=""></div>
+
+    <div class="bg"></div>
+    <div id="test">jq测试点击</div>
+<script type="text/javascript" src="entry.js"></script><script type="text/javascript" src="entry2.js"></script></body>
+</html>

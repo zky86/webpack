@@ -9,7 +9,7 @@ var webpack = require('webpack')
     // });
 
 module.exports = {
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     entry:
     {
         entry: __dirname + "/app/main_1.js", //已多次提及的唯一入口文件
@@ -120,6 +120,7 @@ module.exports = {
                 test: /\.html$/,
                 use: "html-loader"
             }
+            
 
         ]
 
