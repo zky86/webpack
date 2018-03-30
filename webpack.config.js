@@ -1,11 +1,12 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-// const extractSass = new ExtractTextPlugin(
-// {
-//     filename: "index.css",
-//     disable: process.env.NODE_ENV === "development"
-// });
+var webpack = require('webpack')
+    // const extractSass = new ExtractTextPlugin(
+    // {
+    //     filename: "index.css",
+    //     disable: process.env.NODE_ENV === "development"
+    // });
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -114,7 +115,14 @@ module.exports = {
         new HtmlWebpackPlugin(
         {
             template: __dirname + "/app/index.tmpl.html" //new 一个这个插件的实例，并传入相关的参数
-        })
+        }),
+        new webpack.ProvidePlugin(
+        {
+            $: 'jquery',
+            jquery: 'jquery',
+            jQuery: 'jquery',
+            _: 'lodash'
+        }),
     ]
 
 
