@@ -11,7 +11,6 @@ var $ = require("./jquery1.8");
 var Browser = null;
 var config = window.Config;
 
-
 exports.a=function(){}
 
 /**

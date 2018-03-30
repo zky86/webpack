@@ -11,3 +11,9 @@ html {
 div{
     padding: 10px;
 }
+
+.imgs{
+    width: 200px;
+    height: 200px;
+    background: url(./images/1.jpg);
+}
