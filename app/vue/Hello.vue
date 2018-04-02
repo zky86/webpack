@@ -1,5 +1,6 @@
 <template>
-    <div id="page-2">
+    <div id="page">
+        <div>页面主体部分</div>
         <div class="title" >变量引用</div>
         <div>
             <img :src="logoUrl" alt="logo">
@@ -15,7 +16,7 @@
 <script>
 import logoUrl from './logo.png';
 export default {
-    name:'page-2',
+    name:'page',
     data(){
         return {
             logoUrl
@@ -25,8 +26,8 @@ export default {
 </script>
 
 <style> 
-    #page-2{
-        color:#aaa;
+    #page{
+
     }
     img{
         width:100px;

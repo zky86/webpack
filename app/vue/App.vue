@@ -1,22 +1,30 @@
 <template>
-<div id="page-main">
-    <!-- <h1>{{message}}</h1> -->
 
-    <Hello></Hello> 
+    <div id="page-main">
+        <!-- <h1>{{message}}</h1>-->
+        <Header></Header>
+        <Hello></Hello>
+        <Footer></Footer>
+    </div>
     
-</div>
-</template> 
+</template>
+
 
 <script>
+
+    import Header from './Header.vue';
     import Hello from './Hello.vue';
+    import Footer from './Footer.vue';
+
     export default{
         name:'page-main',
         data(){
+            // console.log(header);
             return {
                 // message:'Vue With Webpack4'
             }
         },
-        components:{Hello}
+        components:{Header,Hello,Footer}
     }
 </script>
 

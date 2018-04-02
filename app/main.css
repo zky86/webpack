@@ -4,12 +4,16 @@ html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     background: #333;
-    color: #fff;
-    padding: 20px;
+    padding: 10px;
 
 }
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
 div{
-    padding: 10px;
+    margin: 10px 0;
 }
 
 .imgs{

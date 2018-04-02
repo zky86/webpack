@@ -7,7 +7,7 @@ import App from './vue/App.vue';
 
 var app = new Vue({
     el: "#app",
-    template: '<App />',
+    template: '<App/>',
     data: function()
     {
         // return {
@@ -23,7 +23,7 @@ var app = new Vue({
     mounted: function()
     {
         var self = this;
-        console.log(self.txt);
+        // console.log(self.txt);
     },
     methods:
     {
