@@ -1,6 +1,8 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 var webpack = require('webpack')
     // const extractSass = new ExtractTextPlugin(
     // {
@@ -9,7 +11,8 @@ var webpack = require('webpack')
     // });
 
 module.exports = {
-    devtool: 'source-map',
+    // devtool: 'source-map',
+    devtool: 'eval-source-map',
     entry:
     {
         entry: __dirname + "/app/main_1.js", //已多次提及的唯一入口文件
@@ -41,6 +44,7 @@ module.exports = {
     module:
     {
         rules: [
+
             {
                 test: /(\.jsx|\.js)$/,
                 use:
@@ -101,7 +105,7 @@ module.exports = {
                 })
             }, 　
 
-            { 
+            {
                 //处理图片，会在 output 目录中生成图片文件，js 中需要使用 require("*.jpg")先行引入才可以，同样 html 中通过 background-image 设置的图片不可以，但 css 中通过 background-image 设置的图片可以
                 test: /\.(jpg|png)$/,
                 use:
@@ -115,12 +119,18 @@ module.exports = {
                     }
                 }
             },
-            { 
+            {
                 //处理 html 中通过 img 引入的图片，background-image 设置的图片不可以
                 test: /\.html$/,
                 use: "html-loader"
-            }
-            
+            },
+
+            {
+                test: /\.vue$/,
+                use: 'vue-loader'
+            },
+
+
 
         ]
 
@@ -130,11 +140,17 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin(
         {
+            // filename: 'common.css'
             filename: 'common.css'
         }),
         new HtmlWebpackPlugin(
         {
-            template: __dirname + "/app/index.tmpl.html" //new 一个这个插件的实例，并传入相关的参数
+            template: __dirname + "/app/index.tmpl.html", //new 一个这个插件的实例，并传入相关的参数,
+            minify:
+            { //压缩HTML文件
+                removeComments: true, //移除HTML中的注释
+                collapseWhitespace: true //删除空白符与换行符
+            }
         }),
         new webpack.ProvidePlugin(
         {
@@ -143,6 +159,11 @@ module.exports = {
             jQuery: 'jquery',
             _: 'lodash'
         }),
+        // new UglifyJsPlugin({
+        //    sourceMap: false
+        // })
+
+
     ]
 
 
