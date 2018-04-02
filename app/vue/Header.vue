@@ -1,7 +1,7 @@
 <template>
 
     <div id="header">
-        <div class="title">{{title}}</div>
+        <div class="title"><span>{{title}}</span></div>
     </div>
 
 </template>
@@ -17,9 +17,13 @@ export default {
 }
 </script>
 
-<style> 
+<style lang='scss'> 
     #header{
         color:#aaa;
         background: #fff;
+        span{
+            font-weight: bold;
+            font-size: 20px;
+        }
     }
 </style>

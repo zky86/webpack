@@ -1,13 +1,13 @@
 console.log("这个是mian_2.js");
 import C from './common';
 // var $ = require("./jquery3.1");
-// 
+console.log(C.ParseURL());
 import Vue from 'vue'
 import App from './vue/App.vue';
 
 var app = new Vue({
     el: "#app",
-    template: '<App/>',
+    // template: '<App/>',
     data: function()
     {
         // return {

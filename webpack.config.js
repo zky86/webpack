@@ -12,7 +12,7 @@ var webpack = require('webpack')
 
 module.exports = {
     // devtool: 'source-map',
-    devtool: 'eval-source-map',
+    devtool: 'eval-source-map', //开发版本带调试
     entry:
     {
         entry: __dirname + "/app/main_1.js", //已多次提及的唯一入口文件
@@ -22,6 +22,18 @@ module.exports = {
     performance:
     {
         hints: false
+    },
+
+
+    // watchOptions:
+    // {
+    //     aggregateTimeout: 300,
+    //     poll: 1000
+    // },
+
+    resolve:
+    {
+        extensions: [".js", ".json", ".jsx", ".css", '.vue']
     },
 
     output:
@@ -148,8 +160,9 @@ module.exports = {
             template: __dirname + "/app/index.tmpl.html", //new 一个这个插件的实例，并传入相关的参数,
             minify:
             { //压缩HTML文件
-                removeComments: true, //移除HTML中的注释
-                collapseWhitespace: true //删除空白符与换行符
+                removeComments: false, //移除HTML中的注释
+                collapseWhitespace: false, //删除空白符与换行符
+                userName : "汤圆"
             }
         }),
         new webpack.ProvidePlugin(
@@ -159,6 +172,7 @@ module.exports = {
             jQuery: 'jquery',
             _: 'lodash'
         }),
+        new webpack.HotModuleReplacementPlugin(),
         // new UglifyJsPlugin({
         //    sourceMap: false
         // })
