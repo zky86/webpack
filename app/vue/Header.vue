@@ -1,6 +1,6 @@
 <template>
 
-    <div id="header">
+    <div id="header_model">
         <div class="title"><span>{{title}}</span></div>
     </div>
 
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name:'header',
+    name:'header_model',
     data(){
         return {
             "title" : "头部-组件"
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang='scss'> 
-    #header{
+    #header_model{
         color:#aaa;
         background: #fff;
         span{

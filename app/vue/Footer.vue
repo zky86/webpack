@@ -1,6 +1,6 @@
 <template>
 
-    <div id="footer">
+    <div id="footer_model">
         <div class="title">{{title}}</div>
     </div>
 
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name:'footer',
+    name:'footer_model',
     data(){
         return {
             "title" : "底部-组件"
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style> 
-    #footer{
+    #footer_model{
         color:#aaa;
         background: #fff;
     }

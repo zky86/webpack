@@ -2,9 +2,9 @@
 
     <div id="page-main">
         <!-- <h1>{{message}}</h1>-->
-        <Header></Header>
+        <header_model></header_model>
         <Hello></Hello>
-        <Footer></Footer>
+        <footer_model></footer_model>
     </div>
     
 </template>
@@ -12,9 +12,9 @@
 
 <script>
 
-    import Header from './Header.vue';
+    import header_model from './Header.vue';
     import Hello from './Hello.vue';
-    import Footer from './Footer.vue';
+    import footer_model from './Footer.vue';
 
     export default{
         name:'page-main',
@@ -24,7 +24,7 @@
                 // message:'Vue With Webpack4'
             }
         },
-        components:{Header,Hello,Footer}
+        components:{header_model,Hello,footer_model}
     }
 </script>
 

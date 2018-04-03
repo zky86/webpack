@@ -10,9 +10,9 @@ var app = new Vue({
     // template: '<App/>',
     data: function()
     {
-        // return {
-        //     "txt": "hello word!"
-        // }
+        return {
+            // "txt": "hello word!"
+        }
     },
 
     methods:

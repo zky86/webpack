@@ -5,6 +5,7 @@
  */
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const colors = require('colors');  
+
 // const extractSass = new ExtractTextPlugin(
 // {
 //     filename: "index.css",
@@ -17,7 +18,7 @@ const common = require('./webpack.config.js');
 
 module.exports = merge(common,
 {
-    devtool: 'inline-source-map',
+    devtool: 'source-map', //带调试功能
     module:
     {
         rules: [

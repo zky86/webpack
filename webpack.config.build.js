@@ -4,6 +4,7 @@
  * @Created at 2018.4.3
  */
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const colors = require('colors');  
 // const extractSass = new ExtractTextPlugin(
 // {
 //     filename: "index.css",
